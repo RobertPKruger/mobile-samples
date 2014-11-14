@@ -264,6 +264,7 @@ Fixed: Deleted Xamarin.Mobile component and re-added it from the component store
 \
 Tested on iPhone 6, and simulator 4S\
 \
+\
 \pard\pardeftab720
 
 \f2\i0\fs36 \cf2 iOSContentControls
@@ -271,8 +272,9 @@ Tested on iPhone 6, and simulator 4S\
 \
 177 Namespace errors, where all I needed to do was delete \'93MonoTouch\'94 from UIKit, Foundation, Corelocation, or MapKit. Most were resolved in \'93using\'94 directives, but many were fully qualified namespaces inline.\
 \
+\pard\pardeftab720
 
-\f2\i0 SearchScreen.xib.cs(24,24): Error CS0115: `Example_ContentControls.Screens.iPhone.Search.SearchScreen.WordsTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override (CS0115) (iOSContentControls)\
+\f2\i0 \cf2 SearchScreen.xib.cs(24,24): Error CS0115: `Example_ContentControls.Screens.iPhone.Search.SearchScreen.WordsTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override (CS0115) (iOSContentControls)\
 \
 
 \f3\i Fix: Changed return value and parameter to nint\
