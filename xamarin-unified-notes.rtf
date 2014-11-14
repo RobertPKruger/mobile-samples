@@ -124,6 +124,11 @@ MainScreen/MainViewController.cs(18,19): warning CS0414: The private field `Loca
 \f2\i0 \
 \
 \
+
+\f3\i Tested on iPhone 6, and simulator 4S
+\f2\i0 \
+\
+\
 \pard\pardeftab720
 
 \f1\b\fs36 \cf2 BluetoothLEExplorer.iOS
@@ -138,9 +143,14 @@ UI/Controls/ScanButton.cs(11,26): warning CS0114: `BluetoothLEExplorer.iOS.UI.Co
 \
 Fixes: Did not fix, due to dependency on external component that is still noncompliant.\
 \
-\
+\pard\pardeftab720
 
-\f1\b\fs36 Camera.iOS
+\f3\i \cf2 Tested on iPhone 6, and simulator 4S
+\f2\i0 \
+\
+\pard\pardeftab720
+
+\f1\b\fs36 \cf2 Camera.iOS
 \f2\b0\fs24 \
 \
 \pard\pardeftab720
@@ -243,11 +253,67 @@ MainViewController.designer.cs(16,3): error CS0234: The type or namespace name `
 
 \f3\i Fix for all these: Changed from Monotouch.UIKit to UIKit.\
 \
+\pard\pardeftab720
 
-\f4\b #11
+\f4\b \cf2 #11
 \f3\b0 \
 \
 MTOUCHTASK: error MT0034: Cannot include both 'monotouch.dll' and 'Xamarin.iOS.dll' in the same Xamarin.iOS project - 'Xamarin.iOS.dll' is referenced explicitly, while 'monotouch.dll' is referenced by 'Xamarin.Mobile, Version=0.6.3.0, Culture=neutral, PublicKeyToken=null'.\
 \
 Fixed: Deleted Xamarin.Mobile component and re-added it from the component store.\
+\
+Tested on iPhone 6, and simulator 4S\
+\
+\pard\pardeftab720
+
+\f2\i0\fs36 \cf2 iOSContentControls
+\f3\i\fs24 \
+\
+177 Namespace errors, where all I needed to do was delete \'93MonoTouch\'94 from UIKit, Foundation, Corelocation, or MapKit. Most were resolved in \'93using\'94 directives, but many were fully qualified namespaces inline.\
+\
+
+\f2\i0 SearchScreen.xib.cs(24,24): Error CS0115: `Example_ContentControls.Screens.iPhone.Search.SearchScreen.WordsTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override (CS0115) (iOSContentControls)\
+\
+
+\f3\i Fix: Changed return value and parameter to nint\
+
+\f2\i0 \
+SearchScreen.xib.cs(24,24): Error CS0508: `Example_ContentControls.Screens.iPhone.Search.SearchScreen.WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)' (CS0508) (iOSContentControls)\
+\
+
+\f3\i Fix: Changed to nint
+\f2\i0 \
+\
+\
+Misc. package errors between builds. Fixed by cleaning solution.\
+\
+\
+
+\f1\b Warnings:
+\f2\b0 \
+\
+	Screens/iPhone/Browsers/BrowsersHome.xib.cs(61,24): warning CS0672: Member `Example_ContentControls.Screens.iPhone.Browsers.BrowsersHome.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)' overrides obsolete member `UIKit.UIViewController.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)'. Add the Obsolete attribute to `Example_ContentControls.Screens.iPhone.Browsers.BrowsersHome.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)'\
+\
+	Screens/iPhone/Browsers/WebBrowser.xib.cs(120,24): warning CS0672: Member `Example_ContentControls.Screens.iPhone.Browsers.WebBrowser.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)' overrides obsolete member `UIKit.UIViewController.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)'. Add the Obsolete attribute to `Example_ContentControls.Screens.iPhone.Browsers.WebBrowser.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)'\
+\
+	Screens/iPhone/Browsers/LocalBrowser.xib.cs(56,24): warning CS0672: Member `Example_ContentControls.Screens.iPhone.Browsers.LocalBrowser.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)' overrides obsolete member `UIKit.UIViewController.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)'. Add the Obsolete attribute to `Example_ContentControls.Screens.iPhone.Browsers.LocalBrowser.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)'\
+\
+	Screens/iPhone/Tabs/TabBarController.cs(90,24): warning CS0672: Member `Example_ContentControls.Screens.iPhone.Tabs.TabBarController.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)' overrides obsolete member `UIKit.UIViewController.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)'. Add the Obsolete attribute to `Example_ContentControls.Screens.iPhone.Tabs.TabBarController.ShouldAutorotateToInterfaceOrientation(UIKit.UIInterfaceOrientation)'\
+\
+	Screens/iPhone/Maps/MapWithOverlayScreen.xib.cs(94,34): warning CS0672: Member `Example_ContentControls.Screens.iPhone.Maps.MapWithOverlayScreen.MapDelegate.GetViewForOverlay(MapKit.MKMapView, Foundation.NSObject)' overrides obsolete member `MapKit.MKMapViewDelegate.GetViewForOverlay(MapKit.MKMapView, Foundation.NSObject)'. Add the Obsolete attribute to `Example_ContentControls.Screens.iPhone.Maps.MapWithOverlayScreen.MapDelegate.GetViewForOverlay(MapKit.MKMapView, Foundation.NSObject)'\
+\
+\
+
+\f3\i Fix: Added \'93Obsolete\'94 attribute to all these methods.
+\f2\i0 \
+\
+\
+Info.plist:  warning : Supported iPhone orientations have not been set\
+\
+
+\f3\i Tested on iPhone 6, and simulator 4S
+\f2\i0 \
+\
+\
+\
 }

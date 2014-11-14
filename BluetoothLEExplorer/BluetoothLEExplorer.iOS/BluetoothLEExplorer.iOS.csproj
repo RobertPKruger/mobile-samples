@@ -89,13 +89,13 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
-    <Reference Include="Xamarin.iOS" />
     <Reference Include="MBProgressHUD">
-      <HintPath>bin\iPhoneSimulator\Debug\MBProgressHUD.dll</HintPath>
+      <HintPath>..\Components\mbprogresshud-0.9.0\lib\ios-unified\MBProgressHUD.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
