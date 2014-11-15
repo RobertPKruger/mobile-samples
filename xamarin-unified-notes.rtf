@@ -9,6 +9,7 @@
 \f0\fs24 \cf0 Steps in each conversion\
 \
 	Open the project\
+	Look at ReadMe\
 	Run project and check out expected behavior\
 	Close project\
 	Run the conversion tool\
@@ -278,9 +279,11 @@ Tested on iPhone 6, and simulator 4S\
 \
 
 \f3\i Fix: Changed return value and parameter to nint\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
 
-\f2\i0 \
-SearchScreen.xib.cs(24,24): Error CS0508: `Example_ContentControls.Screens.iPhone.Search.SearchScreen.WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)' (CS0508) (iOSContentControls)\
+\f2\i0 \cf2 \
+\pard\pardeftab720
+\cf2 SearchScreen.xib.cs(24,24): Error CS0508: `Example_ContentControls.Screens.iPhone.Search.SearchScreen.WordsTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)' (CS0508) (iOSContentControls)\
 \
 
 \f3\i Fix: Changed to nint
@@ -317,5 +320,172 @@ Info.plist:  warning : Supported iPhone orientations have not been set\
 \f2\i0 \
 \
 \
+\
+\pard\pardeftab720
+
+\fs36 \cf2 Embedded Resources iOS
+\fs24 \
+\
+\
+	Main.cs(4,7): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	Main.cs(5,7): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	AppDelegate.cs(4,7): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	AppDelegate.cs(5,7): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	HomeScreen.cs(5,7): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	HomeScreen.cs(6,7): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	HomeScreen.designer.cs(7,7): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	HomeScreen.designer.cs(17,3): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	AppDelegate.cs(13,37): error CS0246: The type or namespace name `UIApplicationDelegate' could not be found. Are you missing `UIKit' using directive?\
+	HomeScreen.cs(11,36): error CS0246: The type or namespace name `UIViewController' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(16,3): error CS0246: The type or namespace name `UIWindow' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(17,3): error CS0246: The type or namespace name `UIViewController' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(18,17): error CS0246: The type or namespace name `UIStoryboard' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(27,43): error CS0246: The type or namespace name `UIApplication' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(27,62): error CS0246: The type or namespace name `NSDictionary' could not be found. Are you missing `Foundation' using directive?\
+	HomeScreen.cs(17,24): error CS0115: `EmbeddedResources.HomeScreen.ViewDidLoad()' is marked as an override but no suitable method found to override\
+\
+\
+\pard\pardeftab720
+
+\f3\i \cf2 Fixed: All errors resolved by simply removing \'93Monotouch\'94 from namespace declarations.\
+\
+
+\f2\i0 \
+\
+\pard\pardeftab720
+
+\fs36 \cf2 GLKeysES30 iOS
+\fs24 \
+\
+\
+Numerous \'93MonoTouch\'94 namespace qualifiers needed to be manually deleted. After that, eight errors remained.\
+\
+\pard\pardeftab720
+
+\f1\b \cf2 #1
+\f2\b0 \
+\
+EAGLView.cs(53,45): error CS0266: Cannot implicitly convert type `System.nfloat' to `float'. An explicit conversion exists (are you missing a cast?)\
+	\
+
+\f3\i Fix: Changed local variable declaration to nfloat
+\f2\i0 \
+\
+
+\f1\b #2\
+
+\f2\b0 \
+EAGLView.cs(150,44): error CS0266: Cannot implicitly convert type `System.nfloat' to `float'. An explicit conversion exists (are you missing a cast?)\
+\
+
+\f3\i Fix: Changed local variable declaration to nfloat
+\f2\i0 \
+\
+
+\f1\b #3
+\f2\b0 \
+\
+EAGLView.cs(151,44): error CS0266: Cannot implicitly convert type `CoreGraphics.CGRect' to `System.Drawing.RectangleF'. An explicit conversion exists (are you missing a cast?)\
+\
+
+\f3\i Fix: Changed local variable declaration of System.Drawing.RectangleF to 
+\f2\i0 CoreGraphics.CGRect\
+\
+
+\f1\b #4
+\f2\b0 \
+\
+EAGLView.cs(186,22): error CS0266: Cannot implicitly convert type `CoreGraphics.CGSize' to `System.Drawing.SizeF'. An explicit conversion exists (are you missing a cast?)\
+\
+
+\f3\i Fix: Changed local variable declaration of System.Drawing.SizeF to CoreGraphics.CGSize
+\f2\i0 \
+\
+
+\f1\b #5
+\f2\b0 \
+\
+EAGLView.cs(194,18): error CS1061: Type `CoreGraphics.CGBitmapContext' does not contain a definition for `SetRGBFillColor' and no extension method `SetRGBFillColor' of type `CoreGraphics.CGBitmapContext' could be found. Are you missing an assembly reference?\
+\
+
+\f3\i bitmapContext.\cf3 SetRGBFillColor\cf2  (grayLevel, grayLevel, grayLevel, \cf6 1\cf2 );\uc0\u8232 \
+Fix: Changed to:\
+\
+bitmapContext.SetFillColor(grayLevel, grayLevel, grayLevel, \cf6 1\cf2 );
+\f2\i0 \uc0\u8232 \
+
+\f1\b #6
+\f2\b0 \
+\
+EAGLView.cs(196,18): error CS1061: Type `CoreGraphics.CGBitmapContext' does not contain a definition for `SetRGBFillColor' and no extension method `SetRGBFillColor' of type `CoreGraphics.CGBitmapContext' could be found. Are you missing an assembly reference?\
+\
+
+\f3\i Fix: Changed to:\
+\
+bitmapContext.SetFillColor(grayLevel, grayLevel, grayLevel, \cf6 1\cf2 );
+\f2\i0 \
+\
+
+\f1\b #7
+\f2\b0 \
+\
+EAGLView.cs(198,21): error CS1502: The best overloaded method match for `System.Drawing.PointF.PointF(float, float)' has some invalid arguments\
+\
+Fix: Changed to CoreGraphics.\cf5 CGPoint\cf2 \
+\
+
+\f1\b #8
+\f2\b0 \
+\
+EAGLView.cs(198,58): error CS1503: Argument `#2' cannot convert `System.nfloat' expression to type `float'\
+\
+Fix: Previous fix addressed this issue.\
+\
+\
+FIXING THE FLOATS EXPOSED DOWNSTREAM ISSUES:\
+\
+\
+	EAGLView.cs(158,29): error CS1502: The best overloaded method match for `OpenTK.Matrix4.Scale(float)' has some invalid arguments\
+\
+\cf5 Matrix4\cf2  scale = \cf5 Matrix4\cf2 .Scale (aspect);\uc0\u8232 \
+
+\f3\i Fixed: \cf5 Matrix4\cf2  scale = \cf5 Matrix4\cf2 .Scale ((\cf4 float\cf2 )aspect);
+\f2\i0 \uc0\u8232 \
+\
+\
+	EAGLView.cs(158,36): error CS1503: Argument `#1' cannot convert `System.nfloat' expression to type `float'\
+\
+
+\f3\i Fixed: keys.textProjection = \cf5 Matrix4\cf2 .Mult (\cf5 Matrix4\cf2 .CreateTranslation (\cf6 1\cf2 , \cf6 1\cf2 , \cf6 0\cf2 ), \cf5 Matrix4\cf2 .Scale (.\cf6 5f\cf2 , .\cf6 5f\cf2 *(\cf4 float\cf2 )aspect, \cf6 1\cf2 ));\uc0\u8232 
+\f2\i0 \
+\
+\
+	EAGLView.cs(160,86): error CS1502: The best overloaded method match for `OpenTK.Matrix4.Scale(float, float, float)' has some invalid arguments\
+	EAGLView.cs(160,98): error CS1503: Argument `#2' cannot convert `System.nfloat' expression to type `float'\
+
+\f3\i keys.projection = \cf5 Matrix4\cf2 .CreatePerspectiveFieldOfView (OpenTK.\cf5 MathHelper\cf2 .DegreesToRadians (\cf6 42.0f\cf2 ), aspect, \cf6 1.0f\cf2 , \cf6 70.0f\cf2 );\uc0\u8232 \
+\
+Fixed: keys.projection = \cf5 Matrix4\cf2 .CreatePerspectiveFieldOfView (OpenTK.\cf5 MathHelper\cf2 .DegreesToRadians (\cf6 42.0f\cf2 ), (\cf4 float\cf2 )aspect, \cf6 1.0f\cf2 , \cf6 70.0f\cf2 );
+\f2\i0 \uc0\u8232 \
+\
+	EAGLView.cs(163,86): error CS1502: The best overloaded method match for `OpenTK.Matrix4.Scale(float, float, float)' has some invalid arguments\
+	EAGLView.cs(163,98): error CS1503: Argument `#2' cannot convert `System.nfloat' expression to type `float'\
+\
+
+\f3\i keys.textProjection = \cf5 Matrix4\cf2 .Mult (\cf5 Matrix4\cf2 .CreateTranslation (\cf6 1\cf2 , \cf6 1\cf2 , \cf6 0\cf2 ), \cf5 Matrix4\cf2 .Scale (.\cf6 5f\cf2 , .\cf6 5f\cf2  / aspect, \cf6 1\cf2 ));\uc0\u8232 \
+Fixed: keys.textProjection = \cf5 Matrix4\cf2 .Mult (\cf5 Matrix4\cf2 .CreateTranslation (\cf6 1\cf2 , \cf6 1\cf2 , \cf6 0\cf2 ), \cf5 Matrix4\cf2 .Scale (.\cf6 5f\cf2 , .\cf6 5f\cf2  / (\cf4 float\cf2 )aspect, \cf6 1\cf2 ));
+\f2\i0 \
+\
+\
+\
+\
+	EAGLView.cs(166,30): error CS1502: The best overloaded method match for `OpenTK.Matrix4.CreatePerspectiveFieldOfView(float, float, float, float)' has some invalid arguments\
+\
+	EAGLView.cs(166,104): error CS1503: Argument `#2' cannot convert `System.nfloat' expression to type `float'\
+\
+keys.projection = \cf5 Matrix4\cf2 .CreatePerspectiveFieldOfView (OpenTK.\cf5 MathHelper\cf2 .DegreesToRadians (\cf6 42.0f\cf2 ), aspect, (\cf4 float\cf2 )\cf6 1.0f\cf2 , \cf6 70.0f\cf2 );\uc0\u8232 \
+Fixed: keys.projection = \cf5 Matrix4\cf2 .CreatePerspectiveFieldOfView (OpenTK.\cf5 MathHelper\cf2 .DegreesToRadians (\cf6 42.0f\cf2 ), (\cf4 float\cf2 )aspect, (\cf4 float\cf2 )\cf6 1.0f\cf2 , \cf6 70.0f\cf2 );\uc0\u8232 \
+\
+Tested on iPhone 6.\
 \
 }
