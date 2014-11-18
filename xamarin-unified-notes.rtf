@@ -588,4 +588,60 @@ Fix: Changed constructor in LoadingOverlay.cs to take CGRect.\
 \f2\i0 \
 \
 Tested on iPhone 6.\cf5 \uc0\u8232 \cf2 \
+\
+\pard\pardeftab720
+
+\fs36 \cf2 MWC.iOS
+\fs24 \
+\
+377 errors due to \'93Monotouch\'94 in namespace. Fixed.\
+\
+\
+\pard\pardeftab720
+
+\f4\i\b \cf2 On hold, pending more information.
+\f2\i0\b0 \
+\
+\
+\
+\pard\pardeftab720
+
+\fs36 \cf2 Notifications.iOS
+\fs24 \
+\
+	Main.cs(3,8): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	AppDelegate.cs(3,8): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	AppDelegate.cs(4,8): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	MyViewController.cs(5,8): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	AppDelegate.cs(7,29): error CS0246: The type or namespace name `UIApplicationDelegate' could not be found. Are you missing `UIKit' using directive?\
+	MyViewController.cs(7,34): error CS0246: The type or namespace name `UIViewController' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(10,11): error CS0246: The type or namespace name `UIWindow' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(12,43): error CS0246: The type or namespace name `UIApplication' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(12,62): error CS0246: The type or namespace name `NSDictionary' could not be found. Are you missing `Foundation' using directive?\
+	AppDelegate.cs(37,51): error CS0246: The type or namespace name `UIApplication' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(37,78): error CS0246: The type or namespace name `UILocalNotification' could not be found. Are you missing `UIKit' using directive?\
+	MyViewController.cs(11,11): error CS0246: The type or namespace name `UIButton' could not be found. Are you missing `UIKit' using directive?\
+	\
+MyViewController.cs(13,24): error CS0115: `Notifications.MyViewController.ViewDidLoad()' is marked as an override but no suitable method found to override\
+\
+\pard\pardeftab720
+
+\f3\i \cf2 Fix: Removed \'93Monotouch\'94 from namespace.
+\f2\i0 \
+\
+	MyViewController.cs(49,20): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	MyViewController.cs(50,16): error CS1503: Argument `#1' cannot convert `System.nfloat' expression to type `float'\
+\
+
+\f3\i Fix: Changed RectangleF to CGRect.
+\f2\i0 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
 }
