@@ -594,13 +594,52 @@ Tested on iPhone 6.\cf5 \uc0\u8232 \cf2 \
 \fs36 \cf2 MWC.iOS
 \fs24 \
 \
-377 errors due to \'93Monotouch\'94 in namespace. Fixed.\
-\
-\
 \pard\pardeftab720
 
-\f4\i\b \cf2 On hold, pending more information.
-\f2\i0\b0 \
+\f3\i \cf2 Many errors due to \'93Monotouch\'94 in namespace. Fixed.
+\f2\i0 \
+\
+	AL/DaysTableSource.cs(34,23): error CS0115: `MWC.iOS.AL.DaysTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/DaysTableSource.cs(39,23): error CS0508: `MWC.iOS.AL.DaysTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'\
+	AL/DaysTableSource.cs(44,25): error CS0508: `MWC.iOS.AL.DaysTableSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)': return type must be `System.nfloat' to match overridden member `UIKit.UITableViewSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)'\
+	AL/DaysTableSource.cs(58,25): error CS0115: `MWC.iOS.AL.DaysTableSource.GetHeightForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/DaysTableSource.cs(62,26): error CS0115: `MWC.iOS.AL.DaysTableSource.TitleForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/DaysTableSource.cs(68,26): error CS0115: `MWC.iOS.AL.DaysTableSource.GetViewForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Screens/iPhone/Speakers/SpeakersScreen.cs(83,25): error CS0508: `MWC.iOS.Screens.iPhone.Speakers.SpeakersTableSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)': return type must be `System.nfloat' to match overridden member `MonoTouch.Dialog.DialogViewController.SizingSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)'\
+	Screens/iPhone/Twitter/TwitterScreen.cs(152,25): error CS0508: `MWC.iOS.Screens.iPhone.Twitter.TwitterScreenSizingSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)': return type must be `System.nfloat' to match overridden member `MonoTouch.Dialog.DialogViewController.SizingSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)'\
+	Screens/Common/News/NewsScreen.cs(144,25): error CS0508: `MWC.iOS.Screens.Common.News.NewsScreenSizingSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)': return type must be `System.nfloat' to match overridden member `MonoTouch.Dialog.DialogViewController.SizingSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)'\
+	AL/FavoritesTableSource.cs(53,25): error CS0508: `MWC.iOS.AL.FavoritesTableSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)': return type must be `System.nfloat' to match overridden member `UIKit.UITableViewSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)'\
+	AL/FavoritesTableSource.cs(68,23): error CS0115: `MWC.iOS.AL.FavoritesTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/FavoritesTableSource.cs(73,26): error CS0115: `MWC.iOS.AL.FavoritesTableSource.TitleForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/FavoritesTableSource.cs(78,23): error CS0508: `MWC.iOS.AL.FavoritesTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'\
+	AL/FavoritesTableSource.cs(83,26): error CS0115: `MWC.iOS.AL.FavoritesTableSource.GetViewForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/UpNextTableSource.cs(70,25): error CS0508: `MWC.iOS.AL.UpNextTableSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)': return type must be `System.nfloat' to match overridden member `UIKit.UITableViewSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)'\
+	AL/UpNextTableSource.cs(85,23): error CS0115: `MWC.iOS.AL.UpNextTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/UpNextTableSource.cs(91,26): error CS0115: `MWC.iOS.AL.UpNextTableSource.TitleForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/UpNextTableSource.cs(97,26): error CS0115: `MWC.iOS.AL.UpNextTableSource.GetViewForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/UpNextTableSource.cs(105,23): error CS0508: `MWC.iOS.AL.UpNextTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'\
+	Screens/iPad/Sessions/SessionSplitView.cs(9,3): error CS0246: The type or namespace name `Dialog' could not be found. Are you missing an assembly reference?\
+	AL/SpeakersTableSource.cs(32,25): error CS0508: `MWC.iOS.SpeakersTableSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)': return type must be `System.nfloat' to match overridden member `UIKit.UITableViewSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)'\
+	AL/SpeakersTableSource.cs(37,23): error CS0115: `MWC.iOS.SpeakersTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/SpeakersTableSource.cs(42,26): error CS0115: `MWC.iOS.SpeakersTableSource.TitleForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/SessionsTableSource.cs(32,25): error CS0508: `MWC.iOS.SessionsTableSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)': return type must be `System.nfloat' to match overridden member `UIKit.UITableViewSource.GetHeightForRow(UIKit.UITableView, Foundation.NSIndexPath)'\
+	AL/SessionsTableSource.cs(37,23): error CS0115: `MWC.iOS.SessionsTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	AL/SessionsTableSource.cs(42,26): error CS0115: `MWC.iOS.SessionsTableSource.TitleForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	UI/Controls/UnderlineLabel.cs(15,24): error CS0115: `MWC.iOS.UnderlineLabel.Draw(System.Drawing.RectangleF)' is marked as an override but no suitable method found to override\
+\
+\
+
+\f3\i Fixes: Changed float to nfloat, RectangleF to CGRect, and SizeF to CGSize, cast nfloat in indexers to float.\
+\
+\
+adHocWiFiNetworkReachability.\cf3 SetCallback\cf2  (OnChange); changed to adHocWiFiNetworkReachability.SetNotification (OnChange);\uc0\u8232 \
+\
+\cf4 var\cf2  s = \cf4 new\cf2  MWC.iOS.Screens.iPad.\cf5 SessionPopupScreen\cf2 (args.SessionClicked, \cf4 this\cf2 );\
+PresentModalViewModelController(s, true) changed to PresentViewController (s, \cf4 true\cf2 , \cf4 null\cf2 );\uc0\u8232 \
+PresentModalViewModelController changed to PresentViewController: added null to satisfy new third parameter for a completion handler of type Action.\uc0\u8232 
+\f2\i0 \
+\
+53 Warnings. Added [Obsolete] attribute to 18. 35 warnings remain.\
 \
 \
 \
