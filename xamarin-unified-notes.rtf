@@ -676,6 +676,44 @@ MyViewController.cs(13,24): error CS0115: `Notifications.MyViewController.ViewDi
 \f2\i0 \
 \
 \
+\pard\pardeftab720
+
+\fs36 \cf2 Phoneword iOS
+\fs24 \
+\
+\
+	AppDelegate.cs(5,7): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	AppDelegate.cs(6,7): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	PhonewordiOSViewController.cs(4,7): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	PhonewordiOSViewController.cs(5,7): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	PhonewordiOSViewController.designer.cs(7,7): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	AppDelegate.cs(24,37): error CS0246: The type or namespace name `UIApplicationDelegate' could not be found. Are you missing `UIKit' using directive?\
+	PhonewordiOSViewController.cs(9,52): error CS0246: The type or namespace name `UIViewController' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(28,19): error CS0246: The type or namespace name `UIWindow' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(40,43): error CS0246: The type or namespace name `UIApplication' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(40,70): error CS0246: The type or namespace name `NSDictionary' could not be found. Are you missing `Foundation' using directive?\
+	AppDelegate.cs(49,44): error CS0246: The type or namespace name `UIApplication' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(56,44): error CS0246: The type or namespace name `UIApplication' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(61,45): error CS0246: The type or namespace name `UIApplication' could not be found. Are you missing `UIKit' using directive?\
+	AppDelegate.cs(66,39): error CS0246: The type or namespace name `UIApplication' could not be found. Are you missing `UIKit' using directive?\
+	PhonewordiOSViewController.cs(19,24): error CS0115: `PhonewordiOS.PhonewordiOSViewController.DidReceiveMemoryWarning()' is marked as an override but no suitable method found to override\
+	PhonewordiOSViewController.cs(27,24): error CS0115: `PhonewordiOS.PhonewordiOSViewController.ViewDidLoad()' is marked as an override but no suitable method found to override\
+	PhonewordiOSViewController.cs(67,24): error CS0115: `PhonewordiOS.PhonewordiOSViewController.ViewDidUnload()' is marked as an override but no suitable method found to override\
+	PhonewordiOSViewController.cs(73,24): error CS0115: `PhonewordiOS.PhonewordiOSViewController.ViewWillAppear(bool)' is marked as an override but no suitable method found to override\
+	PhonewordiOSViewController.cs(78,24): error CS0115: `PhonewordiOS.PhonewordiOSViewController.ViewDidAppear(bool)' is marked as an override but no suitable method found to override\
+	PhonewordiOSViewController.cs(83,24): error CS0115: `PhonewordiOS.PhonewordiOSViewController.ViewWillDisappear(bool)' is marked as an override but no suitable method found to override\
+	PhonewordiOSViewController.cs(88,24): error CS0115: `PhonewordiOS.PhonewordiOSViewController.ViewDidDisappear(bool)' is marked as an override but no suitable method found to override\
+	PhonewordiOSViewController.cs(95,64): error CS0246: The type or namespace name `UIInterfaceOrientation' could not be found. Are you missing `UIKit' using directive?\
+	PhonewordiOSViewController.designer.cs(15,3): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	PhonewordiOSViewController.designer.cs(15,3): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	PhonewordiOSViewController.designer.cs(15,3): error CS0234: The type or namespace name `UIKit' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+\
+\
+\pard\pardeftab720
+
+\f3\i \cf2 Fixed: Removed \'93Monotouch\'94 from namespace. Removed inline namespace to \'93using\'94 statement.
+\f2\i0 \
+\
 \
 \
 \
