@@ -583,6 +583,7 @@ Fix: Changed constructor in LoadingOverlay.cs to take CGRect.\
 	AppLayer/DispatchAdapter.cs(14,38): error CS0246: The type or namespace name `NSAction' could not be found. Are you missing an assembly reference?\
 \
 \
+\pard\pardeftab720
 
 \f3\i \cf0 Fix: NSObject.BeginInvokeOnMainThread takes an action, not a delegate. Removed delegate and passed the action.
 \f2\i0 \
@@ -744,6 +745,30 @@ Warnings:\
 \
 \
 \
+\pard\pardeftab720
+
+\fs36 \cf2 iOSTableAndCellStyles
+\fs24 \
 \
+\pard\pardeftab720
+
+\f3\i \cf2 103 errors due to MonoTouch namespace qualifier. Fixed
+\f2\i0 \
+\
+	Code/TableSource.cs(30,23): error CS0508: `Example_TableAndCellStyles.Code.TableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'\
+	Code/TableSource.cs(38,23): error CS0115: `Example_TableAndCellStyles.Code.TableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Code/TableSource.cs(46,26): error CS0115: `Example_TableAndCellStyles.Code.TableSource.TitleForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Code/TableSource.cs(54,26): error CS0115: `Example_TableAndCellStyles.Code.TableSource.TitleForFooter(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Code/NavigationTable/NavItemTableSource.cs(27,23): error CS0508: `Example_TableAndCellStyles.Code.NavigationTable.NavItemTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'\
+\
+	Code/TableSource.cs(30,23): error CS0508: `Example_TableAndCellStyles.Code.TableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'\
+	Code/TableSource.cs(38,23): error CS0115: `Example_TableAndCellStyles.Code.TableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Code/TableSource.cs(46,26): error CS0115: `Example_TableAndCellStyles.Code.TableSource.TitleForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Code/TableSource.cs(54,26): error CS0115: `Example_TableAndCellStyles.Code.TableSource.TitleForFooter(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Code/NavigationTable/NavItemTableSource.cs(27,23): error CS0508: `Example_TableAndCellStyles.Code.NavigationTable.NavItemTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'\
+\
+
+\f3\i Fixed: Changed int to nint in signatures and float to nfloat. Cast nint in indexers to int.
+\f2\i0 \
 \
 }
