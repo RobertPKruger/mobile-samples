@@ -794,4 +794,74 @@ Fix: Changed to PopViewController.\
 \pard\pardeftab720
 
 \f2\i0 \cf2 \
+\
+\pard\pardeftab720
+
+\fs36 \cf2 iOSStandardControls
+\fs24 \
+\
+Many 
+\f3\i errors due to MonoTouch namespace qualifier. Fixed.\
+\
+	Screens/iPhone/AlertViews/AlertViewsScreen_iPhone.xib.cs(149,25): error CS0115: `Example_StandardControls.Screens.iPhone.AlertViews.AlertViewsScreen_iPhone.CustomButtonsAlertDelegate.Clicked(UIKit.UIAlertView, int)' is marked as an override but no suitable method found to override\
+	Screens/iPhone/AlertViews/AlertViewsScreen_iPhone.xib.cs(157,25): error CS0115: `Example_StandardControls.Screens.iPhone.AlertViews.AlertViewsScreen_iPhone.CustomButtonsAlertDelegate.WillDismiss(UIKit.UIAlertView, int)' is marked as an override but no suitable method found to override\
+	Screens/iPhone/AlertViews/AlertViewsScreen_iPhone.xib.cs(165,25): error CS0115: `Example_StandardControls.Screens.iPhone.AlertViews.AlertViewsScreen_iPhone.CustomButtonsAlertDelegate.Dismissed(UIKit.UIAlertView, int)' is marked as an override but no suitable method found to override\
+	Code/NavItemTableSource.cs(28,23): error CS0508: `Xamarin.Code.NavItemTableSource.NumberOfSections(UIKit.UITableView)': return type must be `System.nint' to match overridden member `UIKit.UITableViewSource.NumberOfSections(UIKit.UITableView)'\
+	Code/NavItemTableSource.cs(36,23): error CS0115: `Xamarin.Code.NavItemTableSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Code/NavItemTableSource.cs(44,26): error CS0115: `Xamarin.Code.NavItemTableSource.TitleForHeader(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Code/NavItemTableSource.cs(52,26): error CS0115: `Xamarin.Code.NavItemTableSource.TitleForFooter(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+	Controls/ActivityIndicatorAlertView.cs(56,24): error CS0115: `Example_StandardControls.Controls.ActivityIndicatorAlertView.Draw(System.Drawing.RectangleF)' is marked as an override but no suitable method found to override\
+\
+Fixed: Changed int to nint. Changed RectangleF to CGRect.\
+\
+\
+	Screens/iPhone/ScrollView/Controller.cs(28,5): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Screens/iPhone/ScrollView/Controller.cs(28,43): error CS1503: Argument `#3' cannot convert `System.nfloat' expression to type `float'\
+	Screens/iPhone/TapToZoomScrollView/Controller.cs(27,5): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Screens/iPhone/TapToZoomScrollView/Controller.cs(27,43): error CS1503: Argument `#3' cannot convert `System.nfloat' expression to type `float'\
+	Screens/iPhone/PagerControl/PagerControl_iPhone.xib.cs(71,45): error CS1502: The best overloaded method match for `System.Collections.Generic.List<UIKit.UIViewController>.this[int]' has some invalid arguments\
+	Screens/iPhone/PagerControl/PagerControl_iPhone.xib.cs(71,72): error CS1503: Argument `#1' cannot convert `System.nint' expression to type `int'\
+	Screens/iPhone/PagerControl/PagerControl_iPhone.xib.cs(90,28): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Screens/iPhone/PagerControl/PagerControl_iPhone.xib.cs(91,21): error CS1503: Argument `#1' cannot convert `System.nfloat' expression to type `float'\
+	Screens/iPhone/PagerControl/PagerControl_iPhone.xib.cs(102,27): error CS1502: The best overloaded method match for `System.Drawing.SizeF.SizeF(float, float)' has some invalid arguments\
+	Screens/iPhone/PagerControl/PagerControl_iPhone.xib.cs(103,20): error CS1503: Argument `#1' cannot convert `System.nfloat' expression to type `float'\
+	Code/NavItemTableSource.cs(38,19): error CS1502: The best overloaded method match for `System.Collections.Generic.List<Xamarin.Code.NavItemGroup>.this[int]' has some invalid arguments\
+	Code/NavItemTableSource.cs(38,20): error CS1503: Argument `#1' cannot convert `System.nint' expression to type `int'\
+	Code/NavItemTableSource.cs(46,19): error CS1502: The best overloaded method match for `System.Collections.Generic.List<Xamarin.Code.NavItemGroup>.this[int]' has some invalid arguments\
+	Code/NavItemTableSource.cs(46,20): error CS1503: Argument `#1' cannot convert `System.nint' expression to type `int'\
+	Code/NavItemTableSource.cs(54,19): error CS1502: The best overloaded method match for `System.Collections.Generic.List<Xamarin.Code.NavItemGroup>.this[int]' has some invalid arguments\
+	Code/NavItemTableSource.cs(54,20): error CS1503: Argument `#1' cannot convert `System.nint' expression to type `int'\
+	Controls/ActivityIndicatorAlertView.cs(50,17): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Controls/ActivityIndicatorAlertView.cs(50,44): error CS1503: Argument `#1' cannot convert `System.nfloat' expression to type `float'\
+	Controls/ActivityIndicatorAlertView.cs(65,32): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Controls/ActivityIndicatorAlertView.cs(65,61): error CS1503: Argument `#3' cannot convert `System.nfloat' expression to type `float'\
+	Controls/ActivityIndicatorAlertView.cs(75,31): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Controls/ActivityIndicatorAlertView.cs(75,47): error CS1503: Argument `#1' cannot convert `System.nfloat' expression to type `float'\
+	Screens/iPhone/Toolbar/ProgrammaticToolbar_Controller.cs(32,29): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Screens/iPhone/Toolbar/ProgrammaticToolbar_Controller.cs(33,24): error CS1503: Argument `#2' cannot convert `System.nfloat' expression to type `float'\
+	Screens/iPhone/PickerView/PickerView_CustomAppearance.cs(144,44): error CS0266: Cannot implicitly convert type `CoreGraphics.CGSize' to `System.Drawing.SizeF'. An explicit conversion exists (are you missing a cast?)\
+	Controls/UIViewDatePicker.cs(93,28): error CS1502: The best overloaded method match for `System.Drawing.SizeF.SizeF(float, float)' has some invalid arguments\
+	Controls/UIViewDatePicker.cs(93,51): error CS1503: Argument `#1' cannot convert `System.nfloat' expression to type `float'\
+	Controls/UIViewDatePicker.cs(94,33): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Controls/UIViewDatePicker.cs(94,64): error CS1503: Argument `#2' cannot convert `System.nfloat' expression to type `float'\
+	Controls/UIViewDatePicker.cs(108,23): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Controls/UIViewDatePicker.cs(109,23): error CS1503: Argument `#1' cannot convert `System.nfloat' expression to type `float'\
+	Controls/UIViewDatePicker.cs(112,23): error CS1502: The best overloaded method match for `System.Drawing.RectangleF.RectangleF(float, float, float, float)' has some invalid arguments\
+	Controls/UIViewDatePicker.cs(112,58): error CS1503: Argument `#3' cannot convert `System.nfloat' expression to type `float'\
+	Controls/UIViewDatePicker.cs(120,37): error CS0266: Cannot implicitly convert type `CoreGraphics.CGRect' to `System.Drawing.RectangleF'. An explicit conversion exists (are you missing a cast?)\
+	Controls/UIViewDatePicker.cs(134,38): error CS0266: Cannot implicitly convert type `CoreGraphics.CGRect' to `System.Drawing.RectangleF'. An explicit conversion exists (are you missing a cast?)\
+\
+\
+Fixes:\
+\
+Changed RectangleF to CGRect\
+Changed SizeF to CGSize\
+Change PointF to CGPoint\
+\
+\pard\pardeftab720
+\cf4 In TapZoomScrollView changed public\cf2  \cf5 TapZoomScrollView\cf2  (\cf5 RectangleF\cf2  frame) : \cf4 base\cf2 (frame) \{ \}  to \cf5 TapZoomScrollView\cf2  (\cf5 CGRect\cf2  frame) : \cf4 base\cf2 (frame) \{ \} to fix downstream error.
+\f2\i0 \uc0\u8232 
+\f3\i \
+
+\f2\i0 \
 }
