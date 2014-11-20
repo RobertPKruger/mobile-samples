@@ -771,4 +771,27 @@ Warnings:\
 \f3\i Fixed: Changed int to nint in signatures and float to nfloat. Cast nint in indexers to int.
 \f2\i0 \
 \
+\
+\
+\pard\pardeftab720
+
+\fs36 \cf2 SoMA iOS
+\fs24 \
+\
+\
+61 
+\f3\i errors due to MonoTouch namespace qualifier. Fixed\
+\
+\
+MainScreenSource.cs(19,23): error CS0115: `SoMA.MainScreenSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override\
+\
+Fix: Changed int parameter and return type to nint. Cast return to nint.\
+\
+\
+	PhotoScreen.cs(229,26): error CS1061: Type `UIKit.UINavigationController' does not contain a definition for `PopViewControllerAnimated' and no extension method `PopViewControllerAnimated' of type `UIKit.UINavigationController' could be found. Are you missing an assembly reference?\
+\
+Fix: Changed to PopViewController.\
+\pard\pardeftab720
+
+\f2\i0 \cf2 \
 }
