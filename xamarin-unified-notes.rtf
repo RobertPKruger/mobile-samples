@@ -715,7 +715,32 @@ MyViewController.cs(13,24): error CS0115: `Notifications.MyViewController.ViewDi
 \f2\i0 \
 \
 \
+\pard\pardeftab720
+
+\fs36 \cf2 RazorNativeTodo.iOS
+\fs24 \
 \
+\
+\pard\pardeftab720
+
+\f3\i \cf2 Many errors with Monotouch prefix on namespace.
+\f2\i0 \
+\
+\
+Error CS0115: `RazorNativeTodo.TaskDataSource.RowsInSection(UIKit.UITableView, int)' is marked as an override but no suitable method found to override (CS0115) (RazorNativeTodo.iOS)\
+\
+F
+\f3\i ix: Changed int to nint in return value and parameters.
+\f2\i0 \
+\
+Warnings:\
+\
+	RazorViewController.cs(65,5): warning CS0618: `UIKit.UIViewController.PresentModalViewController(UIKit.UIViewController, bool)' is obsolete: `Deprecated in iOS 6.0, use PresentViewController (UIViewController, bool, NSAction) instead and set the ModalViewController property to true.'\
+	RazorViewController.cs(83,6): warning CS0618: `UIKit.UIViewController.PresentModalViewController(UIKit.UIViewController, bool)' is obsolete: `Deprecated in iOS 6.0, use PresentViewController (UIViewController, bool, NSAction) instead and set the ModalViewController property to true.'\
+\
+
+\f3\i Fix: Changed PresentModalViewController to PresentViewController and supplied null for third parameter.
+\f2\i0 \
 \
 \
 \
