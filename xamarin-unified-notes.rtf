@@ -886,6 +886,24 @@ Change PointF to CGPoint\
 \
 \
 \
+\pard\pardeftab720
+
+\fs36 \cf2 Tasky Portable iOS
+\fs24 \
+\
+	Screens/HomeScreen.cs(36,16): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	Screens/HomeScreen.cs(36,16): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+\
+\pard\pardeftab720
+
+\f3\i \cf2 Fix: Removed \'93MonoTouch\'94 from namespace qualifier.
+\f2\i0 \
+\
+	Screens/HomeScreen.cs(101,55): error CS0173: Type of conditional expression cannot be determined because there is no implicit conversion between `<error>' and `string'\
+\
+
+\f3\i Fix: When spaces are omitted from ternary operation, the compiler complains. Simply added spaces.
+\f2\i0 \
 \
 \
 }
