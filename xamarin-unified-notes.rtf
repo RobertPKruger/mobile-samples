@@ -585,7 +585,7 @@ Fix: Changed constructor in LoadingOverlay.cs to take CGRect.\
 \
 \pard\pardeftab720
 
-\f3\i \cf0 Fix: NSObject.BeginInvokeOnMainThread takes an action, not a delegate. Removed delegate and passed the action.
+\f3\i \cf0 Fix: NSObject.BeginInvokeOnMainThread takes an action, not a delegate. Removed delegate and passed plan Action delegate property.
 \f2\i0 \
 \
 Tested on iPhone 6.\cf5 \uc0\u8232 \cf2 \
@@ -862,6 +862,30 @@ Change PointF to CGPoint\
 \cf4 In TapZoomScrollView changed public\cf2  \cf5 TapZoomScrollView\cf2  (\cf5 RectangleF\cf2  frame) : \cf4 base\cf2 (frame) \{ \}  to \cf5 TapZoomScrollView\cf2  (\cf5 CGRect\cf2  frame) : \cf4 base\cf2 (frame) \{ \} to fix downstream error.
 \f2\i0 \uc0\u8232 
 \f3\i \
+\pard\pardeftab720
 
+\f2\i0\fs36 \cf2 Tasky iOS
+\fs24 \
+\
+\
+\pard\pardeftab720
+
+\f3\i \cf2 Fixed multiple MonoTouch-prefix namespace errors (UIKit, Foundation). Moved some inline fully-qualified \'93MonoTouch\'94 references up into \'93using\'94 statements.
 \f2\i0 \
+\
+\
+	Screens/controller_iPhone.cs(36,16): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	Screens/controller_iPhone.cs(48,25): error CS1061: Type `UIKit.UINavigationController' does not contain a definition for `PopViewControllerAnimated' and no extension method `PopViewControllerAnimated' of type `UIKit.UINavigationController' could be found. Are you missing an assembly reference?\
+	Screens/controller_iPhone.cs(55,25): error CS1061: Type `UIKit.UINavigationController' does not contain a definition for `PopViewControllerAnimated' and no extension method `PopViewControllerAnimated' of type `UIKit.UINavigationController' could be found. Are you missing an assembly reference?\
+	Screens/controller_iPhone.cs(36,16): error CS0234: The type or namespace name `Foundation' does not exist in the namespace `MonoTouch'. Are you missing an assembly reference?\
+	Screens/controller_iPhone.cs(75,55): error CS0173: Type of conditional expression cannot be determined because there is no implicit conversion between `<error>' and `string'\
+	ApplicationLayer/LocalizableBindingContext.cs(179,6): error CS0246: The type or namespace name `NSAction' could not be found. Are you missing an assembly reference?\
+	ApplicationLayer/LocalizableBindingContext.cs(204,8): error CS0841: A local variable `invoke' cannot be used before it is declared\
+	ApplicationLayer/LocalizableBindingContext.cs(235,10): error CS0841: A local variable `invoke' cannot be used before it is declared\
+	ApplicationLayer/LocalizableBindingContext.cs(236,42): error CS0841: A local variable `invoke' cannot be used before it is declared\
+\
+\
+\
+\
+\
 }
