@@ -118,7 +118,6 @@
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
     <InterfaceDefinition Include="MainStoryboard_iPad.storyboard" />
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <EmbeddedResource Include="Shader.fsh">
       <LogicalName>Mono.Samples.TexturedCube.Resources.Shader.fsh</LogicalName>
@@ -130,4 +129,5 @@
       <LogicalName>Mono.Samples.TexturedCube.Resources.ShaderPlain.fsh</LogicalName>
     </EmbeddedResource>
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
 </Project>
